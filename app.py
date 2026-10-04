@@ -38,11 +38,13 @@ if submit_button:
     else:
         with st.spinner("Our AI Concierge is mapping your adventure..."):
             try:
-                langfuse_handler = CallbackHandler(
-                    public_key=st.secrets["LANGFUSE_PUBLIC_KEY"],
-                    secret_key=st.secrets["LANGFUSE_SECRET_KEY"],
-                    host=st.secrets["LANGFUSE_HOST"]
-                )
+                 import os
+                os.environ["LANGFUSE_PUBLIC_KEY"] = st.secrets["LANGFUSE_PUBLIC_KEY"]
+                os.environ["LANGFUSE_SECRET_KEY"] = st.secrets["LANGFUSE_SECRET_KEY"]
+                os.environ["LANGFUSE_HOST"] = st.secrets["LANGFUSE_HOST"]
+
+                # 2. Initialize the handler with NO arguments
+                langfuse_handler = CallbackHandler()
 
                 model = ChatOpenAI(
                     model="deepseek/deepseek-chat", 
