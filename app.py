@@ -3,7 +3,7 @@ from typing import List
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
-from langfuse.callback import CallbackHandler
+from langfuse.longchain import CallbackHandler
 
 # --- 1. PYDANTIC OUTPUT DATA STRUCTURES ---
 class ItineraryActivity(BaseModel):
