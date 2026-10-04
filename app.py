@@ -47,7 +47,7 @@ if submit_button:
                 langfuse_handler = CallbackHandler()
 
                 model = ChatOpenAI(
-                    model="meta-llama/llama-3.2-3b-instruct:free",
+                    model="meta-llama/llama-3.1-8b-instruct:free",
                     openai_api_key=st.secrets["OPENROUTER_API_KEY"],
                     openai_api_base="https://openrouter.ai/api/v1",
                     temperature=0.7
