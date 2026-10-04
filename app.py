@@ -38,7 +38,7 @@ if submit_button:
     else:
         with st.spinner("Our AI Concierge is mapping your adventure..."):
             try:
-                 import os
+                import os
                 os.environ["LANGFUSE_PUBLIC_KEY"] = st.secrets["LANGFUSE_PUBLIC_KEY"]
                 os.environ["LANGFUSE_SECRET_KEY"] = st.secrets["LANGFUSE_SECRET_KEY"]
                 os.environ["LANGFUSE_HOST"] = st.secrets["LANGFUSE_HOST"]
